@@ -1,27 +1,8 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
-
-interface INewPostData {
-  newPostTitle: string;
-  newPostContent: string;
-  newPostImg: string;
-  newPostTags: string[];
-  newPostCategories: string[];
-  authorName: string;
-}
-
-interface IPostEditorState {
-  newPostData: INewPostData;
-}
-
-interface IPostEditorProps extends RouteComponentProps<{}> {
-  allCategories?: string[];
-  allTags?: string[];
-}
-
+import * as Types from '../../../commons/Types';
 export class PostEditor extends React.Component<
-  IPostEditorProps,
-  IPostEditorState
+  Types.ICategoriesAndTagsProps,
+  Types.IPostEditorState
 > {
   state = {
     newPostData: {

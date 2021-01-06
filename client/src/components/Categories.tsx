@@ -1,10 +1,9 @@
 import React from 'react';
+import * as Types from '../../../commons/Types';
 
-interface ICategoriesProps {
-  allCategories?: string[];
-}
-
-export const Categories: React.FC<ICategoriesProps> = ({ allCategories }) => (
+export const Categories: React.FC<Types.ICategoriesProps> = ({
+  allCategories,
+}) => (
   <div>
     <h2>Categories</h2>
     <ul>
