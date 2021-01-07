@@ -11,6 +11,13 @@ export interface IBlogPost {
 
 export type ArrayOfCategories = string[];
 export type ArrayOfTags = string[];
+export type ArrayOfBlogPost = IBlogPost[];
+
+export interface IHomePageContent {
+  allCategories?: string[];
+  allTags?: string[];
+  postsList: IBlogPost[];
+}
 
 export interface ICategoriesAndTagsProps extends RouteComponentProps<{}> {
   allCategories?: ArrayOfCategories;
