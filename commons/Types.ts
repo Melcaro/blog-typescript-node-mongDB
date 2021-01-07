@@ -1,10 +1,11 @@
 import { RouteComponentProps } from 'react-router-dom';
 
 export interface IBlogPost {
-  id: number;
+  id: string;
   postTitle: string;
   postContent: string;
   postImg: string;
+  postCategories: string[];
   postTags: string[];
   authorName: string;
 }
@@ -36,21 +37,7 @@ export interface ICategoriesProps {
   allCategories?: ArrayOfCategories;
 }
 
-export interface IPost {
-  id: number;
-  postTitle: string;
-  postContent: string;
-  postImg: string;
-  postTags: ArrayOfTags;
-  postCategories: ArrayOfCategories;
-  authorName: string;
-}
-
 export interface IPostProps extends RouteComponentProps<{ postID: string }> {}
-
-export interface IPostState {
-  postData: IPost | null;
-}
 
 export interface INewPostData {
   newPostTitle: string;
@@ -62,5 +49,10 @@ export interface INewPostData {
 }
 
 export interface IPostEditorState {
+  newPostData: INewPostData;
+}
+
+export interface IUsePostState {
+  postData: IBlogPost;
   newPostData: INewPostData;
 }

@@ -1,15 +1,12 @@
 import React from 'react';
-import * as Types from '../../../commons/Types';
-export class Post extends React.Component<Types.IPostProps, Types.IPostState> {
-  state: Types.IPostState = {
-    postData: null,
-  };
+import { usePost } from '../hooks/usePost';
 
-  render() {
-    return (
-      <div>
-        <h2>Post page</h2>
-      </div>
-    );
-  }
-}
+export const Post = (postId: string) => {
+  const { postData } = usePost(postId);
+
+  return (
+    <div>
+      <h2>Post page</h2>
+    </div>
+  );
+};
