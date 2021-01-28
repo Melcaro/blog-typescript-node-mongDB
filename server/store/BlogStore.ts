@@ -46,11 +46,14 @@ const addOnePost = async (newBlogPost: Types.IBlogPost) => {
   }
 };
 
-const updateOnePost = async (postID: string, blogPost: Types.IBlogPost) => {
+const updateOnePost = async (
+  postID: string,
+  updatedBlogPost: Types.IBlogPost
+) => {
   try {
     return await db
       .collection('blogPosts')
-      .updateOne({ _id: ObjectId(postID) }, { $set: blogPost });
+      .updateOne({ _id: ObjectId(postID) }, { $set: updatedBlogPost });
   } catch (e) {
     console.log(e);
   }
