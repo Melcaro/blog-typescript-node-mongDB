@@ -1,9 +1,11 @@
-import React from 'react';
-import * as Types from '../../../commons/Types';
+import { useHPContent } from '../hooks/useHPContent';
 
-export const Tags: React.FC<Types.ITagsProps> = ({ allTags }) => (
-  <div>
-    <h2>Tags</h2>
-    <ul>{allTags && allTags.map((tag) => <li>{tag}</li>)}</ul>
-  </div>
-);
+export const Tags = () => {
+  const { allTags } = useHPContent();
+  return (
+    <div>
+      <h2>Tags</h2>
+      <ul>{allTags && allTags.map((tag: string) => <li>{tag}</li>)}</ul>
+    </div>
+  );
+};
