@@ -1,6 +1,6 @@
 import { RouteComponentProps } from 'react-router-dom';
 export interface IBlogPost {
-  id: string;
+  postId?: string;
   postTitle: string;
   postContent: string;
   postImg: string;
@@ -8,6 +8,7 @@ export interface IBlogPost {
   postTags: string[];
   authorName: string;
 }
+
 export interface INewPostData {
   newPostTitle: string;
   newPostContent: string;
