@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const PostsCtrl = require('../controllers/PostsController');
 
-router.get('/',)
+router.get('/', PostsCtrl.getAllPosts);
 
-router.post('/')
+router.get('/:postID', PostsCtrl.getOneBlogPostByID);
 
-router.put('/:postID')
+router.post('/', PostsCtrl.addOneBlogPost);
 
-router.delete('/:postID')
+router.put('/:postID', PostsCtrl.updateOneBlogPost);
 
-module.exports=router
+router.delete('/:postID', PostsCtrl.deleteOneBlogPost);
+
+module.exports = router;
